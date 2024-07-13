@@ -9,5 +9,6 @@ export const useConnection = async () => {
     method: 'solana_provider_config',
     params: [],
   })) as CustomChainConfig;
+  console.log(connectionConfig.rpcTarget)
   return new Connection(connectionConfig.rpcTarget);
 }
