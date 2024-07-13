@@ -4,8 +4,6 @@ import { SolanaPrivateKeyProvider } from '@web3auth/solana-provider';
 import { useErrorHandler } from 'src/composables/useErrorHandler';
 
 export const useWeb3Auth = async () => {
-  console.log(process.env.RPC_TARGET);
-  console.log(process.env.MODE);
   const chainConfig: CustomChainConfig = {
     chainNamespace: CHAIN_NAMESPACES.SOLANA,
     chainId: '0x3',

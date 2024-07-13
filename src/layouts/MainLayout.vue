@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-page-container>
+    <q-page-container class="q-pa-md">
       <router-view v-slot="{ Component }">
         <transition
           enter-active-class="animated fadeIn"
@@ -35,6 +35,6 @@ watch(
 
 <style scoped lang="scss">
 .q-page {
-  height: 100dvh;
+  height: calc(100dvh - 32px);
 }
 </style>

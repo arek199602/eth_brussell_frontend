@@ -18,6 +18,7 @@
     "@quasar/extras": "^1.16.4",
     "@solana/spl-token": "^0.4.8",
     "@solana/web3.js": "^1.95.0",
+    "@solflare-wallet/sdk": "^1.4.2",
     "@vueuse/core": "^10.11.0",
     "@web3auth/base": "^8.8.0",
     "@web3auth/default-solana-adapter": "^8.8.0",

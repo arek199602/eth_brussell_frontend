@@ -1,5 +1,8 @@
 // app global css in SCSS form
 
+body.body--dark {
+  background-color: #15202B;
+}
 // height percentage classes
 @for $i from 1 through 100 {
   .-height-#{$i} {

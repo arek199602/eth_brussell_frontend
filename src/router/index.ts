@@ -1,12 +1,6 @@
 import { route } from 'quasar/wrappers';
-import {
-  createMemoryHistory,
-  createRouter,
-  createWebHashHistory,
-  createWebHistory,
-} from 'vue-router';
+import { createMemoryHistory, createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import routes from './routes';
-import { useUserStore } from 'stores/user-store';
 
 /*
  * If not building with SSR mode, you can
@@ -22,7 +16,7 @@ export default route(function (/* { store, ssrContext } */) {
     ? createMemoryHistory
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory);
 
-  const Router = createRouter({
+  return createRouter({
     scrollBehavior: () => ({ left: 0, top: 0 }),
     routes,
 
@@ -31,22 +25,4 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
-
-  const userStore = useUserStore();
-  Router.beforeEach((to) => {
-    const loggedIn = !!userStore.user.walletAddress;
-    // instead of having to check every route record with
-    // to.matched.some(record => record.meta.requiresAuth)
-    if (to.meta.requiresAuth && !loggedIn) {
-      // this route requires auth, check if logged in
-      // if not, redirect to login page.
-      return {
-        path: '/login',
-        // save the location we were at to come back later
-        query: { redirect: to.fullPath },
-      };
-    }
-  });
-
-  return Router;
 });

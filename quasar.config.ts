@@ -111,6 +111,7 @@ export default configure((ctx) => {
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
       config: {
+        dark: true
       },
 
       // iconSet: 'material-icons', // Quasar icon set
@@ -124,7 +125,7 @@ export default configure((ctx) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify']
+      plugins: ['Notify', 'Dark']
     },
 
     // animations: 'all', // --- includes all animations
